@@ -1,0 +1,15 @@
+	<div class="container">
+    <h1><%= @user.name %>のページ</h1>
+    <center><%= @user.name %>のお気に入り一覧</center>
+		<div class="contents">
+			<div>
+			<% unless @favorite == nil %>
+    			<% @favorite.each do |favo| %>
+    				<div class="tweets">
+    				<p><%= favo.blog.content %></p>
+    				</div>
+    			<% end %>
+			<% end %>
+			</div>
+		</div>
+　　</div>

@@ -1,0 +1,26 @@
+<h1>ブログ一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th></th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.content %></td>
+    <td><%= image_tag(blog.image_url) if blog.image.present?%><td>
+   
+   <% if blog.user_id == current_user.id %>
+			<button type="button" class="btn btn-default"><%= link_to "編集", edit_blog_path(blog.id),
+				data: { confirm: '本当に編集していいですか？' } %></button>
+			<button type="button" class="btn btn-default"><%= link_to '削除', blog_path(blog.id),
+				method: :delete ,data: { confirm: '本当に削除していいですか？' } %></button>
+			<button type="button" class="btn btn-default">
+				<%= link_to '詳細', blog_path(blog.id) %></button>
+		<% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "新規投稿画面へ", new_blog_path %>

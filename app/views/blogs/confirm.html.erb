@@ -1,0 +1,17 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+    <% if @blog.image.present? %>
+      <%= image_tag(@blog.image.url) %>
+      <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
+    <% end %>
+
+  <%= form.hidden_field :content %>
+  <p>本文:<%= @blog.content %></p>
+  <%= form.submit  "登録する" %>
+<% end %>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <div><%= form.submit "もどる", name: 'back' %></div>
+<% end %>
