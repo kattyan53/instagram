@@ -5,5 +5,5 @@ module BlogsHelper
     elsif action_name == 'edit'
       blog_path
     end
-  end
+    end
 end
