@@ -62,3 +62,4 @@ gem 'mini_magick'
 gem 'jquery-turbolinks'
 gem 'letter_opener_web'
 gem 'rails_12factor', group: :production
+gem 'bcrypt',         '3.1.11' 
