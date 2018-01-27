@@ -21,7 +21,10 @@ test:
 
 production:
   <<: *default
-  database: phase3_production
-  username: phase3
-  password: <%= ENV['PHASE3_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  database: rails_tutorial
+  pool: 5
+  username: root
+  password: aaa
   socket: /tmp/mysql.sock
