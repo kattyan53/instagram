@@ -24,3 +24,4 @@ production:
   database: phase3_production
   username: phase3
   password: <%= ENV['PHASE3_DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
