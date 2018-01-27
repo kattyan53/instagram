@@ -11,7 +11,7 @@ development:
   pool: 5
   username: root
   password: aaa
-  host: 127.0.0.1
+  host: localhost
   # <<: *default
   # database: phase3_development
 
