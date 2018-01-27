@@ -1,12 +1,16 @@
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  template: template0
 
 development:
-  <<: *default
-  database: phase3_development
+  adapter: mysql2
+  encoding: utf8
+  database: rails_tutorial
+  pool: 5
+  username: root
+  password: aaa
+  host: localhost
 
 test:
   <<: *default

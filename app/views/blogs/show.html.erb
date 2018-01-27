@@ -9,5 +9,21 @@
     <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-prymary' %>
   <% end %>
 <% end %>
-
-  <%= render 'comment' %>
+<div>
+    <% @comments.each do |comment| %>
+      <div>
+        <strong><%= comment.user.name %></strong>
+        <br />
+        <p><%= comment.comment %></p>
+      </div>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= form_with(model: [@blog, Comment.new], local: true) do |form| %>
+      <div>
+        <%= form.label :comment %>
+        <%= form.text_field :comment %>
+      </div>
+      <%= form.submit %>
+    <% end %>
+    <% end %>
+</div>

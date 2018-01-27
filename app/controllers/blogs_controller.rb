@@ -22,7 +22,8 @@ class BlogsController < ApplicationController
     end
     if @blog.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to blogs_path, notice: "投稿しました！"
+      ContactMailer.contact_mail(@blog).deliver
     else
       # 入力フォームを再描画します。
       render 'new'
@@ -32,8 +33,8 @@ class BlogsController < ApplicationController
   def show
     @favorite = current_user.favorites.find_by(blog_id: @blog.id)
     @user = User.find_by(id: @blog.user_id)
-    @comment = Comment.new(comment: params[:comment], blog_id: params[:blog_id], user_id: params[:user_id])
-    @comment.save
+    @blog = Blog.includes(:user).find(params[:id])
+    @comments = @blog.comments.includes(:user).all
   end
 
   def edit
