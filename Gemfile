@@ -61,3 +61,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-turbolinks'
 gem 'letter_opener_web'
+gem 'rails_12factor', group: :production
