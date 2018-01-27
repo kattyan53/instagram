@@ -44,6 +44,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'bcrypt', '3.1.11'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -62,4 +63,4 @@ gem 'mini_magick'
 gem 'jquery-turbolinks'
 gem 'letter_opener_web'
 gem 'rails_12factor', group: :production
-gem 'bcrypt',         '3.1.11' 
+gem 'bcrypt',         '3.1.11'

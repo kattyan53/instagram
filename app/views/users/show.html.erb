@@ -1,6 +1,7 @@
 	<div class="container">
     <h1><%= @user.name %>のページ</h1>
     <center><%= @user.name %>のお気に入り一覧</center>
+
 		<div class="contents">
 			<div>
 			<% unless @favorite == nil %>
@@ -8,8 +9,13 @@
     				<div class="tweets">
     				<p><%= favo.blog.content %></p>
     				</div>
+						<div class="image">
+						<p>
+							<%= image_tag(favo.blog.image_url) if favo.blog.image.present?%>
+						</p>
+						<div>
     			<% end %>
 			<% end %>
 			</div>
 		</div>
-　　</div>
+  </div>
