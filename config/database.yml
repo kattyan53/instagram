@@ -4,13 +4,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: rails_tutorial
-  pool: 5
-  username: root
-  password: aaa
-  host: localhost
+  # adapter: mysql2
+  # encoding: utf8
+  # database: rails_tutorial
+  # pool: 5
+  # username: root
+  # password: aaa
+  # host: localhost
+  <<: *default
+  database: phase3_development
 
 test:
   <<: *default
