@@ -21,6 +21,6 @@ test:
 
 production:
   <<: *default
-  database: phase3_production
-  username: phase3
-  password: <%= ENV['PHASE3_DATABASE_PASSWORD'] %>
+  database: rails_tutorial
+  username: root
+  password: aaa
